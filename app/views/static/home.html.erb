@@ -1,0 +1,19 @@
+<h1>SSO testing </h1>
+<% if current_user %>
+  <%= current_user.try(:email) %>
+  <%= link_to "Sign_out", destroy_user_session_path %>
+<% end %>
+<br/>
+<%= link_to "Go to account", accounts_path %>
+<% unless current_user %>
+  <%= form_tag sso_account_verification_path do %>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= email_field_tag :email %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "SSO login" %>
+    </div>
+  <% end %>
+<% end %>
