@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample ROR app for SSO login.
 
-Things you may want to cover:
+### Setup
+```
+bundle install
+rails db:create
+rails db:migrate
+rails s
+```
 
-* Ruby version
+### Account for SSO login,
 
-* System dependencies
+Go to account and create new account with
+- email: user email
+- content: the idp meta data for SSO
 
-* Configuration
+### Login/Signup with SSO
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+On homepage input email(the email in account record) in input field.
+It should redirect you to login page of IDP then it redirect back and it done.
